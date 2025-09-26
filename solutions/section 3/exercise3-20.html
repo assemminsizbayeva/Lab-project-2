@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and Drop</title>
+  <style>
+    #dragItem { width: 100px; height: 100px; background: blue; color: white; text-align: center; line-height: 100px; cursor: move; }
+    #dropZone { width: 200px; height: 200px; border: 2px dashed #333; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div id="dragItem" draggable="true" aria-grabbed="false">Drag me</div>
+  <div id="dropZone" aria-dropeffect="move">Drop here</div>
+
+  <script>
+    const item = document.getElementById('dragItem');
+    const drop = document.getElementById('dropZone');
+
+    item.addEventListener('dragstart', () => item.setAttribute('aria-grabbed', 'true'));
+    item.addEventListener('dragend', () => item.setAttribute('aria-grabbed', 'false'));
+
+    drop.addEventListener('dragover', e => e.preventDefault());
+    drop.addEventListener('drop', e => {
+      e.preventDefault();
+      drop.appendChild(item);
+    });
+  </script>
+</body>
+</html>
