@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-section Page</title>
+  <style>
+    body { display: flex; margin: 0; }
+    nav { width: 200px; position: fixed; top: 0; left: 0; height: 100vh; background: #333; color: white; padding: 20px; }
+    nav a { display: block; color: white; margin: 10px 0; text-decoration: none; }
+    main { margin-left: 220px; padding: 20px; }
+    section { height: 100vh; padding: 20px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#section1">Section 1</a>
+    <a href="#section2">Section 2</a>
+    <a href="#section3">Section 3</a>
+  </nav>
+  <main>
+    <section id="section1" style="background: lightblue;">Section 1</section>
+    <section id="section2" style="background: lightgreen;">Section 2</section>
+    <section id="section3" style="background: lightcoral;">Section 3</section>
+  </main>
+</body>
+</html>
