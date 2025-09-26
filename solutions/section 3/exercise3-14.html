@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Mode Toggle</title>
+  <style>
+    :root { --bg: white; --text: black; }
+    body { background-color: var(--bg); color: var(--text); font-family: Arial; transition: 0.3s; }
+  </style>
+</head>
+<body>
+  <h1>Dark Mode Example</h1>
+  <button onclick="toggleMode()">Toggle Dark Mode</button>
+
+  <script>
+    function toggleMode() {
+      const root = document.documentElement;
+      if (root.style.getPropertyValue('--bg') === 'white') {
+        root.style.setProperty('--bg', 'black');
+        root.style.setProperty('--text', 'white');
+      } else {
+        root.style.setProperty('--bg', 'white');
+        root.style.setProperty('--text', 'black');
+      }
+    }
+  </script>
+</body>
+</html>
