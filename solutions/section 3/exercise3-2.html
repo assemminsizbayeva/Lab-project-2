@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Navbar</title>
+  <style>
+    body { margin: 0; font-family: Arial; }
+    .navbar { background: #333; overflow: hidden; }
+    .navbar a { color: white; padding: 14px 20px; text-decoration: none; display: block; }
+    .navbar .menu { display: flex; }
+    .hamburger { display: none; cursor: pointer; padding: 14px 20px; color: white; background: #444; }
+    @media (max-width: 600px) {
+      .navbar .menu { display: none; flex-direction: column; }
+      .hamburger { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <span class="hamburger" onclick="toggleMenu()">☰ Menu</span>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
