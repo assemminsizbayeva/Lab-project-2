@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload</title>
+</head>
+<body>
+  <input type="file" id="fileInput">
+  <p id="fileName">No file selected</p>
+
+  <script>
+    const input = document.getElementById('fileInput');
+    const nameDisplay = document.getElementById('fileName');
+    input.addEventListener('change', () => {
+      nameDisplay.textContent = input.files.length ? input.files[0].name : 'No file selected';
+    });
+  </script>
+</body>
+</html>
