@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complex Form</title>
+</head>
+<body>
+  <form id="complexForm" onsubmit="return validate()">
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" required><br><br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color"><br><br>
+
+    <label for="range">Select a number (1-10):</label>
+    <input type="range" id="range" min="1" max="10"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validate() {
+      const date = document.getElementById('birthday').value;
+      if (!date) { alert("Please enter your birthday"); return false; }
+      return true;
+    }
+  </script>
+</body>
+</html>
