@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Localization Example</title>
+</head>
+<body>
+  <p id="greet">Hello!</p>
+  <button onclick="setLang('en')">English</button>
+  <button onclick="setLang('es')">Kyrgyz</button>
+
+  <script>
+    const messages = { en: 'Hello!', es: 'Cаламатсызбы!' };
+    function setLang(lang) {
+      document.getElementById('greet').textContent = messages[lang];
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
