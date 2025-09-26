@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Accordion</title>
+  <style>
+    .accordion button { display: block; width: 100%; text-align: left; padding: 10px; }
+    .panel { display: none; padding: 10px; background: #f1f1f1; }
+  </style>
+</head>
+<body>
+  <div class="accordion">
+    <button aria-expanded="false" onclick="togglePanel(this)">Section 1</button>
+    <div class="panel" role="region">Content for section 1</div>
+
+    <button aria-expanded="false" onclick="togglePanel(this)">Section 2</button>
+    <div class="panel" role="region">Content for section 2</div>
+  </div>
+
+  <script>
+    function togglePanel(btn) {
+      const panel = btn.nextElementSibling;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      panel.style.display = expanded ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
