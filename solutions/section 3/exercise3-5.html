@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Step Form</title>
+  <style>
+    .step { display: none; }
+  </style>
+</head>
+<body>
+  <form id="multiStepForm">
+    <div class="step">
+      <label>Name:</label>
+      <input type="text" name="name">
+    </div>
+    <div class="step">
+      <label>Email:</label>
+      <input type="email" name="email">
+    </div>
+    <div class="step">
+      <p>Review your info and submit.</p>
+      <button type="submit">Submit</button>
+    </div>
+    <button type="button" onclick="nextStep()">Next</button>
+  </form>
+
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.step');
+    steps[currentStep].style.display = 'block';
+
+    function nextStep() {
+      steps[currentStep].style.display = 'none';
+      currentStep++;
+      if(currentStep < steps.length) steps[currentStep].style.display = 'block';
+    }
+  </script>
+</body>
+</html>
